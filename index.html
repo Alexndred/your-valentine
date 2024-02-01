@@ -18,6 +18,7 @@
 
        .container {
            text-align: center;
+           position: relative;
        }
 
        h1 {
@@ -54,6 +55,27 @@
 
        #displayText {
            font-weight: bold; /* Make the text bold */
+           font-size: 30px; /* Set the font size to 30px */
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           opacity: 0;
+           display: none;
+       }
+
+       @keyframes popup {
+           0% {
+               transform: translate(-50%, -50%) scale(0);
+               opacity: 0;
+           }
+           80% {
+               transform: translate(-50%, -50%) scale(1.1);
+           }
+           100% {
+               transform: translate(-50%, -50%) scale(1);
+               opacity: 1;
+           }
        }
 
        @media (max-width: 768px) {
@@ -94,9 +116,12 @@
 
         yesBtn.addEventListener('click', () => {
             displayText.innerText = "Yes! I would love to be your Valentine!";
+            displayText.style.display = 'block'; // Show the text
             gif.src = 'https://hartfordbaking.com/wp-content/uploads/2019/02/charlie-brown-happy-valentines-cute-greetings-animated-gif-2.gif';
-            gif.style.display = 'block';
+            gif.style.display = 'block'; // Show the GIF
+            displayText.style.animation = 'popup 0.5s ease forwards'; // Apply animation
         });
     </script>
 </body>
 </html>
+     
