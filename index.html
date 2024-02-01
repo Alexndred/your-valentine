@@ -15,17 +15,21 @@
            align-items: center;
            height: 100vh;
        }
+
        .container {
            text-align: center;
        }
+
        h1 {
            color: #ff4d4d;
            font-size: 2.5rem;
            margin-bottom: 20px;
        }
+
        .buttons {
            margin-top: 20px;
        }
+
        button {
            padding: 10px 20px;
            font-size: 1.2rem;
@@ -37,14 +41,17 @@
            border-radius: 20px;
            transition: transform 0.2s;
        }
+
        button:hover {
            transform: scale(1.1);
        }
+
        .gif {
            max-width: 300px;
            margin-top: 20px;
            display: none;
        }
+
        @media (max-width: 768px) {
            h1 {
                font-size: 2rem;
@@ -63,12 +70,14 @@
             <button id="yesBtn">Yes</button>
             <button id="noBtn">No</button>
         </div>
-        <img src="" alt="GIF" class="gif" id="gif">
+        <div id="displayText"></div> <!-- Add this line -->
     </div>
+
     <script>
         const yesBtn = document.getElementById('yesBtn');
         const noBtn = document.getElementById('noBtn');
-        const gif = document.getElementById('gif');
+        const displayText = document.getElementById('displayText');
+
         noBtn.addEventListener('mouseover', () => {
             const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
             const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
@@ -78,9 +87,7 @@
         });
 
         yesBtn.addEventListener('click', () => {
-            gif.src = 'https://giphy.com/embed/EUgI9BSalN3mo';
-            gif.src = 'https://hartfordbaking.com/wp-content/uploads/2019/02/charlie-brown-happy-valentines-cute-greetings-animated-gif-2.gif';
-            gif.style.display = 'block';
+            displayText.innerText = "Yes! I would love to be your Valentine!";
         });
     </script>
 </body>
