@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Website</title>
+   <style>
+       body {
+           margin: 0;
+           padding: 0;
+           font-family: 'Arial', sans-serif;
+           background-color: #f8e0e0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+       }
+       .container {
+           text-align: center;
+       }
+       h1 {
+           color: #ff4d4d;
+           font-size: 2.5rem;
+           margin-bottom: 20px;
+       }
+       .buttons {
+           margin-top: 20px;
+       }
+       button {
+           padding: 10px 20px;
+           font-size: 1.2rem;
+           margin: 0 10px;
+           cursor: pointer;
+           background-color: #ff4d4d;
+           color: white;
+           border: none;
+           border-radius: 20px;
+           transition: transform 0.2s;
+       }
+       button:hover {
+           transform: scale(1.1);
+       }
+       .gif {
+           max-width: 300px;
+           margin-top: 20px;
+           display: none;
+       }
+       @media (max-width: 768px) {
+           h1 {
+               font-size: 2rem;
+           }
+           button {
+               font-size: 1rem;
+               padding: 8px 16px;
+           }
+       }
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine?</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+        <img src="" alt="GIF" class="gif" id="gif">
+    </div>
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const gif = document.getElementById('gif');
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        });
+
+        yesBtn.addEventListener('click', () => {
+            gif.src = 'https://giphy.com/embed/EUgI9BSalN3mo';
+            gif.src = 'https://hartfordbaking.com/wp-content/uploads/2019/02/charlie-brown-happy-valentines-cute-greetings-animated-gif-2.gif';
+            gif.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
